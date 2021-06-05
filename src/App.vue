@@ -1,20 +1,24 @@
 <template>
-  <div id="nav">
-    <Header />
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="header">
+    <Navigation />
+    <Banner />
+    <Title />
   </div>
   <router-view/>
 </template>
 
 <script>
-import Header from '@/components/header/Header.vue'
+import Navigation from '@/components/header/Navigation.vue'
+import Banner from '@/components/header/Banner.vue'
+import Title from '@/components/header/Title.vue'
 import { onMounted } from 'vue'
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   components: {
-    Header
+    Navigation,
+    Banner,
+    Title
   },
   setup() {
     onMounted(() => {
